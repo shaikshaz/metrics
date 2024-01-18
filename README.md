@@ -1,72 +1,24 @@
-# metrics
-create metrics
-#!/bin/bash
+Objective:
 
-# Function to log messages to metrics.txt
-log_message() {
-  echo "[ $(date '+%Y-%m-%d %H:%M:%S') ] $1" >> metrics.txt
-}
+This is a bash script which monitors systems metrics for the following:
 
-# Function to check CPU usage
-check_cpu() {
-  cpu_threshold=90
-  cpu_usage=$(top -bn1 | grep "%Cpu" | awk '{print $2}' | cut -d. -f1)
-  
-  if [ "$cpu_usage" -gt "$cpu_threshold" ]; then
-    log_message "High CPU usage detected: $cpu_usage%"
-  fi
-}
+CPU Usage: Checks and logs if CPU usage exceeds 90%
+Memory Usage: Checks and logs if memory usage exceeds 90%.
+Disk Space: Checks and logs if disk space usage exceeds 90%.
+Service Status: Checks and logs if a specific service (e.gSSH) is not running.
+System Logs: Checks and logs if errors are detected in system logs.
 
-# Function to check memory usage
-check_memory() {
-  mem_threshold=90
-  mem_usage=$(free | awk '/Mem/ {print int($3/$2*100)}')
-  
-  if [ "$mem_usage" -gt "$mem_threshold" ]; then
-    log_message "High memory usage detected: $mem_usage%"
-  fi
-}
+I've also implemented Logging Features & Customizations:
+All messages are output to metrics.txt
+You can customize my script by adjusting the threshold values
+I wanted to learn how to advance my knowledge with awk command so i made sure to implement it when i was formatting the metrics.txt file and some cool commands i used a lot was:
+AWK
+What is awk-select data – one or more pieces of individual text
+Cool command like free -check memory usage; df -h -check disk space;top-check CPU usage;grep-to find out errors
 
-# Function to check disk space
-check_disk() {
-  disk_threshold=90
-  disk_usage=$(df -h | awk '/\/$/ {print $5}' | cut -d% -f1)
-  
-  if [ "$disk_usage" -gt "$disk_threshold" ]; then
-    log_message "High disk usage detected: $disk_usage%"
-  fi
-}
+Execution/Usage:
+Firstly make the script executable via chmod,metrics.sh
+To execute ./shazia_metrics.sh or bash shazia_metrics.sh
 
-# Function to check a specific service (e.g., SSH)
-check_service() {
-  service_name="sshd"
-  
-  if ! systemctl is-active --quiet $service_name; then
-    log_message "Service $service_name is not running"
-  fi
-}
-
-# Function to check logs for errors
-check_logs() {
-  error_count=$(grep -i -E 'error|failed' /var/log/syslog | wc -l)
-  
-  if [ "$error_count" -gt 0 ]; then
-    log_message "Errors detected in system logs: $error_count"
-  fi
-}
-
-# Main monitoring function
-main() {
-  echo "System Metrics Monitoring Script"
-
-  check_cpu
-  check_memory
-  check_disk
-  check_service
-  check_logs
-
-  echo "Monitoring complete. Results logged in metrics.txt"
-}
-
-# Execute main function
-main 
+Dependencies:
+This script is run on Ubuntu and compatible .
