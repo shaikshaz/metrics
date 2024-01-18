@@ -18,7 +18,7 @@ Cool command like free -check memory usage; df -h -check disk space;top-check CP
 
 Execution/Usage:
 Firstly make the script executable via chmod,metrics.sh
-To execute ./shazia_metrics.sh or bash shazia_metrics.sh
+To execute metrics.sh or bash metrics.sh
 
 Dependencies:
 This script is run on Ubuntu and compatible .
