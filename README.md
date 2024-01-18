@@ -22,3 +22,6 @@ To execute metrics.sh or bash metrics.sh
 
 Dependencies:
 This script is run on Ubuntu and compatible .
+
+This script relies on the following linux tools so you may need to preinstall them: htop or vmstat
+
