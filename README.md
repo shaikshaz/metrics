@@ -1,27 +1,39 @@
-Objective:
+Situation:To developed a bash script to monitor system metrics on Ubuntu and any compatible systems. The script focuses on CPU usage, memory usage, disk space, service status, and system logs.
 
-This is a bash script which monitors systems metrics for the following:
+Task:
 
-CPU Usage: Checks and logs if CPU usage exceeds 90%
-Memory Usage: Checks and logs if memory usage exceeds 90%.
-Disk Space: Checks and logs if disk space usage exceeds 90%.
-Service Status: Checks and logs if a specific service (e.gSSH) is not running.
-System Logs: Checks and logs if errors are detected in system logs.
+The primary goal is to log and check various system metrics, including CPU, memory, disk space, service status, and system logs. Additionally, the script allows for customization by adjusting threshold values.I have also incorporated AWK commands to enhance my knowledge.
 
-I've also implemented Logging Features & Customizations:
-All messages are output to metrics.txt
-You can customize my script by adjusting the threshold values
-I wanted to learn how to advance my knowledge with awk command so i made sure to implement it when i was formatting the metrics.txt file and some cool commands i used a lot was:
-AWK
-What is awk-select data – one or more pieces of individual text
-Cool command like free -check memory usage; df -h -check disk space;top-check CPU usage;grep-to find out errors
+AWK-Awk is mostly used for pattern scanning and processing. It searches one or more files to see if they contain lines that matches with the specified patterns and then perform the associated actions.
 
+Action:
+
+Script Components:
+
+Metrics Monitored:
+
+CPU Usage (>90%)
+Memory Usage (>90%)
+Disk Space Usage (>90%)
+Service Status (e.g., SSH not running)
+System Logs (detect errors)
+Logging Features & Customizations:
+
+All messages are directed to a metrics.txt file.
+Customization is enabled by allowing the users to adjust threshold values.
+AWK Command Implementation:
+
+AWK is utilized for formatting the metrics.txt file.
+Commands like free -check for memory usage, df -h -check for disk space, top -check for CPU usage, and grep for finding errors in logs are incorporated.
 Execution/Usage:
-Firstly make the script executable via chmod,metrics.sh
-To execute metrics.sh or bash metrics.sh
 
+The script needs to be made executable using chmod +x metrics.sh.
+I have Executed the script using ./metrics.sh or bash metrics.sh.
 Dependencies:
-This script is run on Ubuntu and compatible .
 
-This script relies on the following linux tools so you may need to preinstall them: htop or vmstat
 
+The script is designed and to run on Ubuntu and other compatible systems.
+Dependencies include tools such as htop or vmstat, which needed to be preinstalled.
+Result:
+
+The result is a comprehensive bash script that efficiently monitors and logs critical system metrics, providing users with the flexibility to customize threshold values. AWK commands enhance the script's functionality, and clear execution steps and dependencies make it user-friendly.
