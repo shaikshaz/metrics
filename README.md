@@ -17,8 +17,8 @@ Metrics Monitored:
 CPU Usage (>90%)
 Memory Usage (>90%)
 Disk Space Usage (>90%)
-Service Status (e.g., SSH not running)
-System Logs (detect errors)
+Service Status (e.g., SSH not running)-sudo apt-get install -y openssh-server
+System Logs (detect errors)-cat /var/log/syslog
 Logging Features & Customizations:
 
 All messages are directed to a metrics.txt file.
