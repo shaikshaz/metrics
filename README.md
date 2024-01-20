@@ -1,3 +1,5 @@
+
+![image](https://github.com/shaikshaz/metrics/assets/154241222/b10bc2ef-7955-4d7d-8f19-88d67c497997)
 Situation:To developed a bash script to monitor system metrics on Ubuntu and any compatible systems. The script focuses on CPU usage, memory usage, disk space, service status, and system logs.
 
 Task:
