@@ -4,7 +4,7 @@ Situation:To developed a bash script to monitor system metrics on Ubuntu and any
 
 Task:
 
-The primary goal is to log and check various system metrics, including CPU, memory, disk space, service status, and system logs. Additionally, the script allows for customization by adjusting threshold values.I have also incorporated AWK commands to enhance my knowledge.
+The primary goal is to log and check various system metrics, including CPU, memory, disk space, service status, and system logs. Additionally, the script allows for customization by adjusting threshold values.(cpu_threshold, mem_threshold, disk_threshold,error_threshold) I have also incorporated AWK commands to enhance my knowledge.
 
 AWK-Awk is mostly used for pattern scanning and processing. It searches one or more files to see if they contain lines that matches with the specified patterns and then perform the associated actions.
 
